@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Serv
 public class MemberService {
     //테스트 코드 작성 커맨드 쉬프트 t
     private final MemberRepository memberRepository;
 
-    @Autowired
+    //@Auto
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
