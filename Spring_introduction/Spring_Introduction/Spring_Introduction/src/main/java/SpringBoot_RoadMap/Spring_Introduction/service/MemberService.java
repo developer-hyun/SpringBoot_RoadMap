@@ -5,11 +5,13 @@ import SpringBoot_RoadMap.Spring_Introduction.domain.Member;
 import SpringBoot_RoadMap.Spring_Introduction.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 //@Serv
+@Transactional
 public class MemberService {
     //테스트 코드 작성 커맨드 쉬프트 t
     private final MemberRepository memberRepository;
