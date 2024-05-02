@@ -26,6 +26,8 @@ public class MemberService {
      * 회원가입
      */
     public Long join(Member member) {
+
+        long start = System.currentTimeMillis();
         validateDuplicateMember(member); //중복회원검증
         memberRepository.save(member);
         return member.getId();
