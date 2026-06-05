@@ -10,7 +10,8 @@ import hello.core.member.MemoryMemberRepository;
 public class OrderServiceImpl implements  OrderService{
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    //DIP 위반 오른쪽 선언이 구현체가 바뀌면 바꿔야함 의존성?
+    //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Override
