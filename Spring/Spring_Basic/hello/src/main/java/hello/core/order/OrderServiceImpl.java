@@ -9,13 +9,21 @@ import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements  OrderService{
     //final은 변경할수 없는 상숙값
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+ //   private final MemberRepository memberRepository = new MemoryMemberRepository();
     //DIP 위반 오른쪽 선언이 구현체가 바뀌면 바꿔야함 의존성?
     //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     //DIP와 OCP 지키기
-    private DiscountPolicy discountPolicy;
+    //final은 생성자 할당이 되야함
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
