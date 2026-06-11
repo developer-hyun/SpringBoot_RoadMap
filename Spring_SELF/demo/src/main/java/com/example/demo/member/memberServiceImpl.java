@@ -10,6 +10,7 @@ public class memberServiceImpl implements MemberService{
     private final MemoryRepository memoryRepository;
 
     public memberServiceImpl(MemoryRepository memoryRepository) {
+
         this.memoryRepository = memoryRepository;
     }
 
