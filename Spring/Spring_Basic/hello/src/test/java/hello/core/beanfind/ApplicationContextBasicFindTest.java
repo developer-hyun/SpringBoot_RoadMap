@@ -24,6 +24,7 @@ class ApplicationContextBasicFindTest {
         MemberService memberService = ac.getBean(MemberService.class);  //타입으로 조회는 이름이 불필요  //타입이 여러개일때는?
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class); //memberService 객체가 MemberServiceImpl 타입의 인스턴스인지 검증하는 코드
     }
+
     @Test
     @DisplayName("구체 타입으로 조회")
     void findBeanByName2() {
@@ -39,5 +40,7 @@ class ApplicationContextBasicFindTest {
         //
         //즉, 예외가 발생하는 것이 정상임을
     }
+
+
 
 }
